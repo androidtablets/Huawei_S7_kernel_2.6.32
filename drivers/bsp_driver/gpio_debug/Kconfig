@@ -1,0 +1,4 @@
+config BSP_GPIO_DEBUG
+	tristate "GPIO Debug driver"
+	help
+	  GPIO Debug driver.

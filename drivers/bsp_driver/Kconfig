@@ -1,0 +1,14 @@
+#
+# Bsp Driver Debug subsystem configuration
+#
+
+menuconfig BSP_DEBUG
+	tristate "Bsp Driver Debug Support"
+	---help---
+	  Bsp Driver Debug Support.
+
+if BSP_DEBUG
+
+source "drivers/bsp_driver/gpio_debug/Kconfig"
+
+endif # BSP_DEBUG

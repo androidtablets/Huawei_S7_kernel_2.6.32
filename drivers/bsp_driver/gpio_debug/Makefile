@@ -1,0 +1,1 @@
+obj-$(CONFIG_BSP_GPIO_DEBUG) += bsp_gpiodebug.o

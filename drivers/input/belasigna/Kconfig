@@ -1,0 +1,5 @@
+config BELASIGNA_BS300
+	bool "BELASIGNA BS300 AUDIO"	
+	depends on GPIO_I2C_ADPT
+	help
+	  Say Y here if you have the BELASIGNA BS300. 
