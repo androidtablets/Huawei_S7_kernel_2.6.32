@@ -2333,7 +2333,7 @@ static void msm_batt_update_psy_status_v1(void)
 
     }
 	
-	switch(gBspChargeStatus)
+    switch(gBspChargeStatus)
     {
 		case BSP_CHARGE_STATUS_E_AC:
 			wake_lock_timeout(&msm_batt_info.wlock, HZ * 120);
@@ -2362,7 +2362,7 @@ static void msm_batt_update_psy_status_v1(void)
 				}
 				charging_time_by_sec += temp_time/HZ;
 
-					__func__,g_charging_begin_time,jiffies,temp_time,charging_time_by_sec);
+					//__func__,g_charging_begin_time,jiffies,temp_time,charging_time_by_sec);
 
 				if(msm_batt_info.charging_current == 0)
 				{
@@ -2386,7 +2386,7 @@ static void msm_batt_update_psy_status_v1(void)
 				charging_coulometer_by_current += (msm_batt_info.charging_current)*charging_time_by_sec;
 				dalt_capacity_by_current = charging_coulometer_by_current/BSP_BATTERY_CAPACITY_PERCENTAGE_MA_SEC;
 
-					__func__,charging_cap_gap,msm_batt_info.charging_current,charging_coulometer_by_current,dalt_capacity_by_current);
+					//__func__,charging_cap_gap,msm_batt_info.charging_current,charging_coulometer_by_current,dalt_capacity_by_current);
 				if(charging_cap_gap > 0)
 				{
 					if(charging_cap_gap > 5)
@@ -2462,9 +2462,7 @@ static void msm_batt_update_psy_status_v1(void)
 						dalt_capacity = dalt_capacity_by_current;
 					}
 				}
-				"dalt_capacity = %d, charging_cap_gap = %d, g_two_min_flag = %d \n",
-				__func__,charging_time_by_sec,
-				dalt_capacity_by_current,dalt_capacity,charging_cap_gap,g_two_min_flag);
+				//"dalt_capacity = %d, charging_cap_gap = %d, g_two_min_flag = %d \n",__func__,charging_time_by_sec,dalt_capacity_by_current,dalt_capacity,charging_cap_gap,g_two_min_flag);
 
 				charging_time_by_sec = 0;
 			}
